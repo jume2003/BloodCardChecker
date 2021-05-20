@@ -1,0 +1,50 @@
+﻿<Window x:Class="BloodCardChecker.LabelSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodCardChecker"
+        mc:Ignorable="d"
+        Title="LabelSetting" Height="800" Width="807"
+        Closed="OnClosed"
+        ContentRendered ="OnLoaded">
+    <Grid>
+        <Image x:Name="camera1" HorizontalAlignment="Left" Height="384" VerticalAlignment="Top" Width="512" Stretch="UniformToFill"/>
+        <Image x:Name="camera2" HorizontalAlignment="Left" Height="384" VerticalAlignment="Top" Width="512" Stretch="UniformToFill" Margin="0,384,0,0"/>
+
+        <ComboBox x:Name="camera_sel" SelectionChanged="OnSelectCamera" HorizontalAlignment="Left" Margin="545,10,0,0" VerticalAlignment="Top" Width="244"/>
+
+        <Label Content="X:" HorizontalAlignment="Left" Margin="522,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.333,0.423"/>
+        <TextBox x:Name="textbox_x" HorizontalAlignment="Left" Height="23" Margin="545,66,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="244" IsEnabled="False" />
+        <Slider x:Name="slider_x" HorizontalAlignment="Left" Margin="540,94,0,0" VerticalAlignment="Top" Maximum="2048" Value="275" Minimum="0" SmallChange="1" Width="249"/>
+
+        <Label Content="Y" HorizontalAlignment="Left" Margin="526,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.706,-2.385"/>
+        <TextBox x:Name="textbox_y" HorizontalAlignment="Left" Height="23" Margin="548,124,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="241" IsEnabled="False" />
+        <Slider x:Name="slider_y" HorizontalAlignment="Left" Margin="540,147,0,0" VerticalAlignment="Top" Maximum="1536" Value="985" Minimum="0" SmallChange="1" Width="249"/>
+
+
+        <Label Content="W" HorizontalAlignment="Left" Margin="526,174,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textbox_w" HorizontalAlignment="Left" Height="23" Margin="553,177,0,0" TextWrapping="Wrap" Text="1638" VerticalAlignment="Top" Width="236" IsEnabled="False" />
+        <Slider x:Name="slider_w" HorizontalAlignment="Left" Margin="540,205,0,0" VerticalAlignment="Top" Maximum="2048" Value="1677" Minimum="0" SmallChange="1" Width="249"/>
+
+        <Label Content="H" HorizontalAlignment="Left" Margin="529,232,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textbox_h" HorizontalAlignment="Left" Height="23" Margin="553,232,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="236" IsEnabled="False" />
+        <Slider x:Name="slider_h" HorizontalAlignment="Left" Margin="540,263,0,0" VerticalAlignment="Top" Maximum="100" Value="30" Minimum="0" SmallChange="1" Width="249"/>
+
+        <Label Content="阀值1" HorizontalAlignment="Left" Margin="516,290,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textbox_s1" HorizontalAlignment="Left" Height="23" Margin="562,293,0,0" TextWrapping="Wrap" Text="90" VerticalAlignment="Top" Width="227" IsEnabled="False"/>
+        <Slider x:Name="slider_s1" HorizontalAlignment="Left" Margin="540,323,0,0" VerticalAlignment="Top" Maximum="255" Value="69" Minimum="0" SmallChange="1" Width="249"/>
+
+        <Label Content="阀值2" HorizontalAlignment="Left" Margin="516,350,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textbox_s2" HorizontalAlignment="Left" Height="23" Margin="562,353,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="227" IsEnabled="False"/>
+        <Slider x:Name="slider_s2" HorizontalAlignment="Left" Margin="540,389,0,0" VerticalAlignment="Top" Maximum="255" Value="139" Minimum="0" SmallChange="1" Width="249"/>
+
+        <Canvas x:Name="canvasdraw" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top">
+            <Rectangle x:Name="checkbox_rect1" Canvas.Left="0" Canvas.Top="0" Fill="Yellow" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="10" Height="10"/>
+            <Rectangle x:Name="checkbox_rect2" Canvas.Left="0" Canvas.Top="0" Fill="Yellow" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="10" Height="10"/>
+        </Canvas>
+        <Label x:Name="labelspace" Content="测试结果:" HorizontalAlignment="Left" Margin="540,416,0,0" VerticalAlignment="Top" Width="249" Height="44"/>
+        <Button Content="测试" HorizontalAlignment="Left" Margin="540,465,0,0" VerticalAlignment="Top" Width="249" Click="TestLabelSpace" Height="27"/>
+
+    </Grid>
+</Window>

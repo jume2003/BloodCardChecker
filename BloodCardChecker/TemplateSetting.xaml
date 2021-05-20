@@ -1,0 +1,109 @@
+﻿<Window x:Class="BloodCardChecker.TemplateSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodCardChecker"
+        mc:Ignorable="d"
+        Title="TemplateSetting" Height="557.67" Width="1088.795"
+        ContentRendered="OnLoaded"
+        Closed="OnClosed">
+    <Grid Margin="0,0,0,0">
+        <Image x:Name="camera1" HorizontalAlignment="Left" Height="506" VerticalAlignment="Top" Width="675" Stretch="Fill" Margin="0,0,0,0"/>
+        <Canvas x:Name="canvasdraw" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top">
+            <Rectangle x:Name="checkbox_rect1" Canvas.Left="0" Canvas.Top="0" Fill="Yellow" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="10" Height="10"/>
+            <Rectangle x:Name="checkbox_rect2" Canvas.Left="0" Canvas.Top="0" Fill="Blue" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="512" Height="2"/>
+            <Rectangle x:Name="checkbox_rect3" Canvas.Left="0" Canvas.Top="0" Fill="Brown" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="512" Height="2"/>
+        </Canvas>
+        <ComboBox x:Name="camera_sel" SelectionChanged="OnSelectCamera" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <StackPanel Orientation ="Vertical" Margin="704,0,0,0">
+            <GroupBox Header="管图范围" VerticalAlignment="Stretch" Height="150">
+                <StackPanel Orientation ="Horizontal">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="150" Width="50" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Label Content="X:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="Y" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="W" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="H" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="150" Width="300" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="tuttext_x" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="tutsli_x" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="tuttext_y" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="tutsli_y" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="tuttext_w" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="tutsli_w" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="tuttext_h" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="tutsli_h" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="图标范围" VerticalAlignment="Stretch" Height="150">
+                <StackPanel Orientation ="Horizontal">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="150" Width="50" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Label Content="X:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="Y" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="W" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="H" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="500" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="icontext_x" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="iconsli_x" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="icontext_y" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="iconsli_y" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="icontext_w" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="iconsli_w" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="icontext_h" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="iconsli_h" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="A图范围" VerticalAlignment="Stretch" Height="150">
+                <StackPanel Orientation ="Horizontal">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="150" Width="50" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Label Content="X:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="Y" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="W" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="H" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="150" Width="300" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="attext_x" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="atsli_x" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="attext_y" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="atsli_y" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="attext_w" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="atsli_w" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Width="300" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <TextBox x:Name="attext_h" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="50" IsEnabled="False" Grid.Column="1" />
+                            <Slider x:Name="atsli_h" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="250" Grid.ColumnSpan="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <Button Content="保存" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="344" Click="SaveTemplate" Height="30"/>
+        </StackPanel>
+       
+    </Grid>
+</Window>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="BloodCardChecker.OneDCodeSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodCardChecker"
+        mc:Ignorable="d"
+        Title="OneDCodeSetting" Height="900" Width="1055.666"
+        ContentRendered="OnLoaded"
+        Closed="OnClosed">
+    <Grid Margin="0,0,0,0">
+        <GroupBox Header="参数设置"  Margin="517,384,10,0" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+
+                <ComboBox x:Name="camera_sel" SelectionChanged="OnSelectCamera" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Width="120"/>
+
+                <Label Content="X:" HorizontalAlignment="Left" Margin="1,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.333,0.423"/>
+                <TextBox x:Name="textbox_x" HorizontalAlignment="Left" Height="23" Margin="70,35,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="244" IsEnabled="False" />
+                <Slider x:Name="slider_x" HorizontalAlignment="Left" Margin="0,65,0,0" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="285"/>
+
+                <Label Content="胶柱水平线:" HorizontalAlignment="Left" Margin="381,-3,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.333,0.423" Width="85"/>
+                <TextBox x:Name="textbox_tubey" HorizontalAlignment="Left" Height="23" Margin="360,28,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="141" IsEnabled="False" />
+                <Slider x:Name="slider_tubey" HorizontalAlignment="Left" Margin="419,51,0,0" VerticalAlignment="Top" Maximum="1538" Value="700" Minimum="0" SmallChange="1" Width="26" Height="366" Orientation="Vertical"/>
+
+                <Label Content="Y" HorizontalAlignment="Left" Margin="0,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.706,-2.385"/>
+                <TextBox x:Name="textbox_y" HorizontalAlignment="Left" Height="23" Margin="70,95,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="241" IsEnabled="False" />
+                <Slider x:Name="slider_y" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Maximum="1536" Value="1050" Minimum="0" SmallChange="1" Width="285"/>
+
+                <Label Content="W" HorizontalAlignment="Left" Margin="0,145,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textbox_w" HorizontalAlignment="Left" Height="23" Margin="70,148,0,0" TextWrapping="Wrap" Text="1638" VerticalAlignment="Top" Width="236" IsEnabled="False" />
+                <Slider x:Name="slider_w" HorizontalAlignment="Left" Margin="0,176,0,0" VerticalAlignment="Top" Maximum="2048" Value="800" Minimum="0" SmallChange="1" Width="285"/>
+
+                <Label Content="H" HorizontalAlignment="Left" Margin="0,203,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textbox_h" HorizontalAlignment="Left" Height="23" Margin="70,203,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="236" IsEnabled="False" />
+                <Slider x:Name="slider_h" HorizontalAlignment="Left" Margin="0,234,0,0" VerticalAlignment="Top" Maximum="500" Value="290" Minimum="0" SmallChange="1" Width="285"/>
+
+                <Label Content="阀值1" HorizontalAlignment="Left" Margin="0,261,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textbox_s1" HorizontalAlignment="Left" Height="23" Margin="70,264,0,0" TextWrapping="Wrap" Text="90" VerticalAlignment="Top" Width="227" IsEnabled="False"/>
+                <Slider x:Name="slider_s1" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Maximum="255" Value="39" Minimum="0" SmallChange="1" Width="285"/>
+
+                <Label Content="曝光度高光" HorizontalAlignment="Left" Margin="0,321,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textbox_s2" HorizontalAlignment="Left" Height="23" Margin="70,324,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="227" IsEnabled="False"/>
+                <Slider x:Name="slider_s2" HorizontalAlignment="Left" Margin="0,360,0,0" VerticalAlignment="Top" Maximum="40000" Value="20000" Minimum="1000" SmallChange="1" Width="285"/>
+
+                <Label Content="曝光度低光" HorizontalAlignment="Left" Margin="0,391,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textbox_s3" HorizontalAlignment="Left" Height="23" Margin="70,394,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="227" IsEnabled="False"/>
+                <Slider x:Name="slider_s3" HorizontalAlignment="Left" Margin="0,430,0,0" VerticalAlignment="Top" Maximum="1000" Value="155" Minimum="155" SmallChange="1" Width="285"/>
+
+            </Grid>
+        </GroupBox>
+        <Image x:Name="camera1" HorizontalAlignment="Left" Height="384" VerticalAlignment="Top" Width="512" Stretch="UniformToFill" Margin="0,0,0,0"/>
+        <Image x:Name="camera2" HorizontalAlignment="Left" Height="384" VerticalAlignment="Top" Width="512" Stretch="UniformToFill" Margin="517,0,0,0"/>
+        <Image x:Name="camera3" HorizontalAlignment="Left" Height="384" VerticalAlignment="Top" Width="512" Stretch="UniformToFill" Margin="0,384,0,0"/>
+        <Label x:Name="labelspace" Content="测试结果:" HorizontalAlignment="Left" Margin="0,768,0,0" VerticalAlignment="Top" Width="512" Height="40"/>
+        <Button Content="测试" HorizontalAlignment="Left" Margin="0,813,0,0" VerticalAlignment="Top" Width="512" Click="TestOneDCode" Height="47"/>
+        <Canvas x:Name="canvasdraw" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top">
+            <Rectangle x:Name="checkbox_rect1" Canvas.Left="0" Canvas.Top="0" Fill="Yellow" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="10" Height="10"/>
+            <Rectangle x:Name="checkbox_rect2" Canvas.Left="0" Canvas.Top="0" Fill="Blue" Opacity="0.5" Stroke="Black" StrokeThickness="1"  Width="512" Height="2"/>
+        </Canvas>
+
+
+    </Grid>
+</Window>

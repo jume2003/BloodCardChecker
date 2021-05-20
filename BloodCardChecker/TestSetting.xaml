@@ -1,0 +1,151 @@
+﻿<Window x:Class="BloodCardChecker.TestSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodCardChecker"
+        mc:Ignorable="d"
+        Title="TestSetting" Height="453.066" Width="843.481"
+        ContentRendered ="OnLoaded">
+    <Grid>
+        <ComboBox x:Name="camera_sel" SelectionChanged="OnSelectCamera" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Width="120"/>
+        <GroupBox Header="液面"  Margin="0,28,417,256" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <Label Content="精度:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_lever_step" HorizontalAlignment="Left" Height="23" Margin="42,3,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="上清液:" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_lever_umin" HorizontalAlignment="Left" Height="23" Margin="42,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_lever_umax" HorizontalAlignment="Left" Height="23" Margin="120,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_lever_ucv" HorizontalAlignment="Left" Height="23" Margin="204,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_lever_maxucv" HorizontalAlignment="Left" Height="23" Margin="292,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="下清液:" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_lever_dmin" HorizontalAlignment="Left" Height="23" Margin="42,60,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_lever_dmax" HorizontalAlignment="Left" Height="23" Margin="120,60,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_lever_dcv" HorizontalAlignment="Left" Height="23" Margin="204,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_lever_maxdcv" HorizontalAlignment="Left" Height="23" Margin="292,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="胶柱"  Margin="418,28,284,256" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <Label Content="总宽:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_tubetw" HorizontalAlignment="Left" Height="23" Margin="42,3,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="边宽:" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_tubeew" HorizontalAlignment="Left" Height="23" Margin="42,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="低厚:" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_tubebh" HorizontalAlignment="Left" Height="23" Margin="42,60,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="杂质"  Margin="0,156,679,16" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <Label Content="精度:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_inspection_step" HorizontalAlignment="Left" Height="23" Margin="42,3,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="最大面积:" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_inspection_maxarea" HorizontalAlignment="Left" Height="23" Margin="42,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="最小面积:" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_inspection_minarea" HorizontalAlignment="Left" Height="23" Margin="42,60,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="最小比例:" HorizontalAlignment="Left" Margin="0,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_inspection_raio" HorizontalAlignment="Left" Height="23" Margin="42,90,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="阀值:" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_inspection_count" HorizontalAlignment="Left" Height="23" Margin="42,120,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="黑度:" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_inspection_pixscore" HorizontalAlignment="Left" Height="23" Margin="42,150,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="黄颜色"  Margin="161,156,296,113" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <TextBox x:Name="textbox_color_yminh" HorizontalAlignment="Left" Height="23" Margin="3,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_ymaxh" HorizontalAlignment="Left" Height="23" Margin="78,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_ymins" HorizontalAlignment="Left" Height="23" Margin="3,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_ymaxs" HorizontalAlignment="Left" Height="23" Margin="78,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_yminv" HorizontalAlignment="Left" Height="23" Margin="3,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_ymaxv" HorizontalAlignment="Left" Height="23" Margin="78,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="蓝颜色"  Margin="314,156,141,113" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <TextBox x:Name="textbox_color_bminh" HorizontalAlignment="Left" Height="23" Margin="3,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_bmaxh" HorizontalAlignment="Left" Height="23" Margin="78,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_bmins" HorizontalAlignment="Left" Height="23" Margin="3,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_bmaxs" HorizontalAlignment="Left" Height="23" Margin="78,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_bminv" HorizontalAlignment="Left" Height="23" Margin="3,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_bmaxv" HorizontalAlignment="Left" Height="23" Margin="78,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="无颜色(胶柱)"  Margin="475,156,198,113" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <TextBox x:Name="textbox_color_nminh" HorizontalAlignment="Left" Height="23" Margin="3,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_nmaxh" HorizontalAlignment="Left" Height="23" Margin="78,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_nmins" HorizontalAlignment="Left" Height="23" Margin="3,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_nmaxs" HorizontalAlignment="Left" Height="23" Margin="78,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_nminv" HorizontalAlignment="Left" Height="23" Margin="3,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_nmaxv" HorizontalAlignment="Left" Height="23" Margin="78,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="无颜色(标签)"  Margin="642,156,20,113" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5">
+                <TextBox x:Name="textbox_color_lnminh" HorizontalAlignment="Left" Height="23" Margin="3,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_lnmaxh" HorizontalAlignment="Left" Height="23" Margin="78,2,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_lnmins" HorizontalAlignment="Left" Height="23" Margin="3,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_lnmaxs" HorizontalAlignment="Left" Height="23" Margin="78,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_lnminv" HorizontalAlignment="Left" Height="23" Margin="3,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <TextBox x:Name="textbox_color_lnmaxv" HorizontalAlignment="Left" Height="23" Margin="78,58,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="标签"  Margin="544,28,141,261" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5" Margin="0,0,0,-12">
+                <Label Content="最小:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_label_minw" HorizontalAlignment="Left" Height="23" Margin="42,3,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+                <Label Content="最大:" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.423"/>
+                <TextBox x:Name="textbox_label_maxw" HorizontalAlignment="Left" Height="23" Margin="42,30,0,0" TextWrapping="Wrap" Text="350" VerticalAlignment="Top" Width="70" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="参考线"  Margin="683,28,10,256" VerticalAlignment="Stretch" >
+            <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="122*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="checkbox_is_show_space" Content="标签参考线" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="checkbox_is_show_uinspection" Content="上液面参考线" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="checkbox_is_show_dinspection" Content="下液面参考线" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="检测项目"  Margin="156,252,0,37" VerticalAlignment="Stretch" HorizontalAlignment="Left" Width="679" >
+            <Grid Background="#FFE5E5E5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="50" Margin="0,0,0,0" VerticalAlignment="Top" Width="545">
+                    <CheckBox x:Name="checkbox_is_space" Content="标签距离" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_labelfilp" Content="标签反转" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_uinspection" Content="上液面" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_dinspection" Content="下液面" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_onedcode" Content="一维码" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_color" Content="颜色" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_inspection" Content="杂质" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkbox_is_savedata" Content="是否保存数据" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="28" Margin="0,74,0,0" VerticalAlignment="Top" Width="509">
+                    <ComboBox  x:Name="combobox_tc1" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc2" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc3" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc4" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc5" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc6" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc7" Margin="0,0,0,0" Width="63"></ComboBox>
+                    <ComboBox  x:Name="combobox_tc8" Margin="0,0,0,0" Width="63"></ComboBox>
+                </StackPanel>
+            </Grid>
+
+        </GroupBox>
+
+        <Button Content="保存" HorizontalAlignment="Left" Margin="0,390,0,0" VerticalAlignment="Top" Width="835" Click="Button_Save"/>
+
+    </Grid>
+</Window>
